@@ -1,0 +1,14 @@
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<div class="card-header">
+    <h3> {{ article.votes }} Points </h3>
+</div>
+<div class="card-body">
+    <a href="{{ article.link }}"> {{ article.title }}</a>
+    <span class="badge badge-pill badge-secondary ml-3">{{article.domain()}}</span>
+</div>
+<div class="card-footer">
+    <div class="btn-group">
+        <a href (click)="voteUp()" class="btn btn-secondary"><i class="fas fa-arrow-up"></i></a>
+        <a href (click)="voteDown()" class="btn btn-secondary"><i class="fas fa-arrow-down"></i></a>
+    </div>
+</div>
