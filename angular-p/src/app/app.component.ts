@@ -15,8 +15,7 @@ export class AppComponent {
   }
 
   estrai(numero1: HTMLInputElement): void {
-    let numero2 = Number(numero1);
+    let numero2 = Number(numero1.value);
     this.numeroEstratto = numero2;
-    console.log(numero2);
   }
 }
