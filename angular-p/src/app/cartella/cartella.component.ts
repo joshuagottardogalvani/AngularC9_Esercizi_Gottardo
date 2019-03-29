@@ -7,9 +7,11 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class CartellaComponent implements OnInit {
   
-  constructor() { }
+  @Input() numeroEstratto: number;
+
+  constructor() {
+  }
 
   ngOnInit() {
   }
-
 }

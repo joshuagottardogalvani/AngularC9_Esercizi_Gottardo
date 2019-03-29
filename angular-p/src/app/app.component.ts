@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -8,14 +8,21 @@ import { Component, Input } from '@angular/core';
 export class AppComponent {
   
   numeroEstratto: number;
+  numeri: number[];
 
-  constructor() { }
+  constructor() {
+    this.numeri = [];
+  }
 
   ngOnInit() {
   }
 
   estrai(numero1: HTMLInputElement): void {
     let numero2 = Number(numero1.value);
-    this.numeroEstratto = numero2;
+    
+    if (numero2 !== this.numeroEstratto && !isNaN(numero2)) {
+      this.numeroEstratto = numero2;
+      this.numeri.push(numero2); 
+    }
   }
 }
