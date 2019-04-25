@@ -51,9 +51,11 @@
   </form>
 </div>
 
-<div class="m-5">
-  <h2 class="text-center mt-3">Elenco appuntamenti</h2>
+<div class="w-50 text-center" style="margin: 50px auto">
+  <h2>Elenco appuntamenti</h2>
   <ul class="list-group">
-    <li *ngFor="let appuntamento of appuntamenti" class="list-group-item">{{ appuntamento.data }} - {{ appuntamento.ora }} -> {{ appuntamento.nome }} {{ appuntamento.cognome }}</li>
+    <li *ngFor="let appuntamento of appuntamenti" class="list-group-item text-center" [class.selected]="appuntamento === appuntamentoSelezionato" (click)="onSelect(appuntamento)">{{ appuntamento.data }} - {{ appuntamento.ora }} -> {{ appuntamento.nome }} {{ appuntamento.cognome }}</li>
   </ul>
+  <app-view-prenotazione *ngIf="appuntamentoSelezionato" [appuntamento]="appuntamentoSelezionato"></app-view-prenotazione>
 </div>
+

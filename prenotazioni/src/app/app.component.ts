@@ -13,6 +13,7 @@ export class AppComponent implements OnInit{
 
   myForm: FormGroup;
   appuntamenti = Appuntamenti;
+  appuntamentoSelezionato: Appuntamento;
 
   constructor(fb: FormBuilder) {
     this.myForm = fb.group({'nome': ['Nome', Validators.required], 'cognome': ['Cognome', Validators.required], 'indirizzo': ['Indirizzo', Validators.required], 'email': ['Email', Validators.required], 'telefono': ['3333333333', Validators.required], 'data': ['gg/mm/2019', Validators.required], 'ora': ['Ora', Validators.required]
@@ -20,11 +21,14 @@ export class AppComponent implements OnInit{
   }
 
   ngOnInit(){
-
   }
 
-   onSubmit(value: string): void {
-     
+  onSelect(appuntamento: Appuntamento): void {
+    this.appuntamentoSelezionato = appuntamento;
+  }
+
+  onSubmit(value: string): void {
+
     let appuntamento : Appuntamento = new Appuntamento();
     appuntamento.nome = this.myForm.controls['nome'].value;
     appuntamento.cognome = this.myForm.controls['cognome'].value;
@@ -35,5 +39,5 @@ export class AppComponent implements OnInit{
     appuntamento.ora = this.myForm.controls['ora'].value;
 
     this.appuntamenti.push(appuntamento);
-   }
+  }
 }

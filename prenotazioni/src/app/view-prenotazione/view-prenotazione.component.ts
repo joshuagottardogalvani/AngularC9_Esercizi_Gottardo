@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Appuntamento } from '../appuntamento';
 
 @Component({
   selector: 'app-view-prenotazione',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./view-prenotazione.component.css']
 })
 export class ViewPrenotazioneComponent implements OnInit {
+
+  @Input() appuntamento: Appuntamento;
 
   constructor() { }
 
