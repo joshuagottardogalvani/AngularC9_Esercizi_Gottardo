@@ -46,13 +46,14 @@
             <div *ngIf="myForm.controls['ora'].hasError('required')" class="alert alert-danger">"ora" è richiesto</div>
         </div>
     </div>
-
-    <button class="btn btn-success btn-block" type="submit">Prenota</button>
-
-
+    <div *ngIf="!myForm.valid" class="alert alert-danger">Il form non è valido</div>
+    <button class="btn btn-success btn-block" type="submit" [disabled]="!myForm.valid">Prenota</button>
   </form>
+</div>
 
-  <ul>
-    <li *ngFor="let a of appuntamenti">{{ a.nome }}</li>
+<div class="m-5">
+  <h2 class="text-center mt-3">Elenco appuntamenti</h2>
+  <ul class="list-group">
+    <li *ngFor="let appuntamento of appuntamenti" class="list-group-item">{{ appuntamento.data }} - {{ appuntamento.ora }} -> {{ appuntamento.nome }} {{ appuntamento.cognome }}</li>
   </ul>
 </div>
