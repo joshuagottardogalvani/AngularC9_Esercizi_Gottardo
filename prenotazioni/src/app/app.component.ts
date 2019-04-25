@@ -12,7 +12,11 @@ export class AppComponent {
 
   constructor(fb: FormBuilder) {
     this.myForm = fb.group({
-      'nome': ['Nome', Validators.required], 'cognome': ['Cognome', Validators.required], 'indirizzo': ['Indirizzo', Validators.required], 'email': ['Email', Validators.required], 'telefono': ['', Validators.required], 'data': ['', Validators.required], 'ora': ['', Validators.required]
+      'nome': ['Nome', Validators.required], 'cognome': ['Cognome', Validators.required], 'indirizzo': ['Indirizzo', Validators.required], 'email': ['Email', Validators.required], 'telefono': ['Telefono', Validators.required], 'data': ['Data', Validators.required], 'ora': ['Ora', Validators.required]
     });
   }
+
+   onSubmit(value: string): void {
+    console.log('you submitted value: ', value);
+   }
 }

@@ -2,3 +2,9 @@ input {
   height: 30px;
   font-size: 15px;
 }
+
+.alert {
+  height: 30px;
+  margin: 5px;
+  padding: 0;
+}

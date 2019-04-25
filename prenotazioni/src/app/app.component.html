@@ -1,26 +1,42 @@
 <h2 class="text-center mt-3">INSERISCI I TUOI DATI</h2>
 <div class="ml-5 mr-5 mt-3 border border-primary rounded">
-  <form class="text-center p-3">
+  <form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm.value)" class="text-center p-3">
 
     <div class="form-row mb-4">
         <div class="col">
             <input type="text" class="form-control" name="nome" placeholder="Nome">
+            <div *ngIf="!myForm.controls['nome'].valid" class="alert alert-danger">"nome" non è valido</div>
+            <div *ngIf="myForm.controls['nome'].hasError('required')" class="alert alert-danger">"nome" è richiesto</div>
         </div>
         <div class="col">
             <input type="text" class="form-control" name="cognome" placeholder="Cognome">
+            <div *ngIf="!myForm.controls['cognome'].valid" class="alert alert-danger">"cognome" non è valido</div>
+            <div *ngIf="myForm.controls['cognome'].hasError('required')" class="alert alert-danger">"cognome" è richiesto</div>
         </div>
     </div>
 
     <input type="text" class="form-control mb-4" name="indirizzo" placeholder="Indirizzo">
+    <div *ngIf="!myForm.controls['indirizzo'].valid" class="alert alert-danger">"indirizzo" non è valido</div>
+    <div *ngIf="myForm.controls['indirizzo'].hasError('required')" class="alert alert-danger">"indirizzo" è richiesto</div>
+
     <input type="email" class="form-control mb-4" name="email" placeholder="Email">
+    <div *ngIf="!myForm.controls['email'].valid" class="alert alert-danger">"email" non è valido</div>
+    <div *ngIf="myForm.controls['email'].hasError('required')" class="alert alert-danger">"email" è richiesto</div>
+
     <input type="tel" class="form-control mb-4" name="telefono" placeholder="Telefono" pattern="[0-9]{3}-[0-9]{7}">
+    <div *ngIf="!myForm.controls['telefono'].valid" class="alert alert-danger">"telefono" non è valido</div>
+    <div *ngIf="myForm.controls['telefono'].hasError('required')" class="alert alert-danger">"telefono" è richiesto</div>
 
     <div class="form-row mb-4">
         <div class="col">
             <input type="date" class="form-control mb-4" name="data" placeholder="Data" min="2019-06-07" max="2019-12-31">
+            <div *ngIf="!myForm.controls['data'].valid" class="alert alert-danger">"data" non è valido</div>
+            <div *ngIf="myForm.controls['data'].hasError('required')" class="alert alert-danger">"data" è richiesto</div>
         </div>
         <div class="col">
             <input type="time" class="form-control mb-4" name="ora" placeholder="Ora">
+            <div *ngIf="!myForm.controls['ora'].valid" class="alert alert-danger">"ora" non è valido</div>
+            <div *ngIf="myForm.controls['ora'].hasError('required')" class="alert alert-danger">"ora" è richiesto</div>
         </div>
     </div>
 
