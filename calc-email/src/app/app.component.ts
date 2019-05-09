@@ -25,7 +25,7 @@ export class AppComponent {
       this.numero2 = Number(this.myForm.controls['numero2'].value);
       this.risultato = Number(this.myForm.controls['numero1'].value) + Number(this.myForm.controls['numero2'].value);
 
-      this.vettoreNumeri(Number(this.numero1), Number(this.numero2));
+      this.vettoreNumeri(this.numero1, this.numero2);
     }
 
     return false;
@@ -37,7 +37,7 @@ export class AppComponent {
       this.numero2 = Number(this.myForm.controls['numero2'].value);
       this.risultato = Number(this.myForm.controls['numero1'].value) - Number(this.myForm.controls['numero2'].value);
 
-      this.vettoreNumeri(Number(this.numero1), Number(this.numero2));
+      this.vettoreNumeri(this.numero1, this.numero2);
     }
 
     return false;
@@ -49,7 +49,7 @@ export class AppComponent {
       this.numero2 = Number(this.myForm.controls['numero2'].value);
       this.risultato = Number(this.myForm.controls['numero1'].value) * Number(this.myForm.controls['numero2'].value);
 
-      this.vettoreNumeri(Number(this.numero1), Number(this.numero2));
+      this.vettoreNumeri(this.numero1, this.numero2);
     }
 
     return false;
@@ -67,20 +67,23 @@ export class AppComponent {
     return false;
   }
 
-vettoreNumeri(n1: number, n2:number){
-    if (n1<n2) {
-        let a = n2;
-        n2 = n1;
-        n2= a;
-    }
+  vettoreNumeri(n1: number, n2:number){
+      console.log(n1, n2);
 
-    this.arrayNumeri = new Array<number>();
+      if (n1 > n2) {
+          let a = n2;
+          n2 = n1;
+          n1 = a;
+      }
 
-    for(let i = n1; i <=n2; i++)
-    {
-        console.log(i);
-        this.arrayNumeri.push(i);
-    }
-}
+      console.log(n1, n2);
+
+      this.arrayNumeri = new Array<number>();
+
+      for(let i = n1; i <=n2; i++)
+      {
+          this.arrayNumeri.push(i);
+      }
+  }
 
 }
