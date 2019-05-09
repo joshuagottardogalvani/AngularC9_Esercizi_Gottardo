@@ -12,7 +12,6 @@ export class AppComponent {
   risultato: Number;
   numero1: Number;
   numero2: Number;
-  numero: Number;
   arrayNumeri: Number[];
 
   constructor(fb: FormBuilder) {
@@ -24,6 +23,9 @@ export class AppComponent {
     this.numero1 = Number(this.myForm.controls['numero1'].value);
     this.numero2 = Number(this.myForm.controls['numero2'].value);
     this.risultato = Number(this.myForm.controls['numero1'].value) + Number(this.myForm.controls['numero2'].value);
+
+    this.vettoreNumeri(Number(this.numero1), Number(this.numero2));
+
     return false;
   }
 
@@ -31,6 +33,9 @@ export class AppComponent {
     this.numero1 = Number(this.myForm.controls['numero1'].value);
     this.numero2 = Number(this.myForm.controls['numero2'].value);
     this.risultato = Number(this.myForm.controls['numero1'].value) - Number(this.myForm.controls['numero2'].value);
+
+    this.vettoreNumeri(Number(this.numero1), Number(this.numero2));
+
     return false;
   }
 
@@ -38,6 +43,9 @@ export class AppComponent {
     this.numero1 = Number(this.myForm.controls['numero1'].value);
     this.numero2 = Number(this.myForm.controls['numero2'].value);
     this.risultato = Number(this.myForm.controls['numero1'].value) * Number(this.myForm.controls['numero2'].value);
+
+    this.vettoreNumeri(Number(this.numero1), Number(this.numero2));
+
     return false;
   }
 
@@ -45,7 +53,26 @@ export class AppComponent {
     this.numero1 = Number(this.myForm.controls['numero1'].value);
     this.numero2 = Number(this.myForm.controls['numero2'].value);
     this.risultato = Number(this.myForm.controls['numero1'].value) / Number(this.myForm.controls['numero2'].value);
+
+    this.vettoreNumeri(Number(this.numero1), Number(this.numero2));
+
     return false;
   }
+
+      vettoreNumeri(n1: number, n2:number)
+    {
+        //Se n2< n1 li scambio
+        if (n1<n2) {
+            let a = n2;
+            n2 = n1;
+            n2= a;
+        }
+        this.arrayNumeri = new Array<number>();
+        for(let i = n1; i <=n2; i++)
+        {
+            console.log(i);
+            this.arrayNumeri.push(i);
+        }
+    }
 
 }
