@@ -7,33 +7,45 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  
+
   myForm: FormGroup;
   risultato: Number;
+  numero1: Number;
+  numero2: Number;
+  numero: Number;
+  arrayNumeri: Number[];
 
   constructor(fb: FormBuilder) {
-    this.myForm = fb.group({'numero1': ['1', Validators.required], 'numero2': ['2', Validators.required]
+    this.myForm = fb.group({'numero1': ['0', Validators.required], 'numero2': ['0', Validators.required]
     });
   }
 
   somma() {
-   this.risultato = Number(this.myForm.controls['numero1'].value) + Number(this.myForm.controls['numero2'].value);
-   return false;
+    this.numero1 = Number(this.myForm.controls['numero1'].value);
+    this.numero2 = Number(this.myForm.controls['numero2'].value);
+    this.risultato = Number(this.myForm.controls['numero1'].value) + Number(this.myForm.controls['numero2'].value);
+    return false;
   }
 
   sottrazione() {
-   this.risultato = Number(this.myForm.controls['numero1'].value) - Number(this.myForm.controls['numero2'].value);
-   return false;
+    this.numero1 = Number(this.myForm.controls['numero1'].value);
+    this.numero2 = Number(this.myForm.controls['numero2'].value);
+    this.risultato = Number(this.myForm.controls['numero1'].value) - Number(this.myForm.controls['numero2'].value);
+    return false;
   }
 
   moltiplicazione() {
-   this.risultato = Number(this.myForm.controls['numero1'].value) * Number(this.myForm.controls['numero2'].value);
-   return false;
+    this.numero1 = Number(this.myForm.controls['numero1'].value);
+    this.numero2 = Number(this.myForm.controls['numero2'].value);
+    this.risultato = Number(this.myForm.controls['numero1'].value) * Number(this.myForm.controls['numero2'].value);
+    return false;
   }
-  
+
   divisione() {
-   this.risultato = Number(this.myForm.controls['numero1'].value) / Number(this.myForm.controls['numero2'].value);
-   return false;
+    this.numero1 = Number(this.myForm.controls['numero1'].value);
+    this.numero2 = Number(this.myForm.controls['numero2'].value);
+    this.risultato = Number(this.myForm.controls['numero1'].value) / Number(this.myForm.controls['numero2'].value);
+    return false;
   }
 
 }

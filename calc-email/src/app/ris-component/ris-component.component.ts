@@ -8,6 +8,11 @@ import { Component, OnInit, Input } from '@angular/core';
 export class RisComponentComponent implements OnInit {
 
   @Input() risultato: Number;
+  @Input() numero1: Number;
+  @Input() numero2: Number;
+
+  arrayNumeri: Number[];
+  numero: Number;
 
   constructor() { }
 
