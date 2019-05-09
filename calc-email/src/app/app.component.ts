@@ -68,15 +68,12 @@ export class AppComponent {
   }
 
   vettoreNumeri(n1: number, n2:number){
-      console.log(n1, n2);
 
       if (n1 > n2) {
           let a = n2;
           n2 = n1;
           n1 = a;
       }
-
-      console.log(n1, n2);
 
       this.arrayNumeri = new Array<number>();
 
