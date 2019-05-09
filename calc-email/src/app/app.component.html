@@ -8,12 +8,10 @@
     <input type="number" class="form-control w-25" id="numero2" name="numero2" onfocus="this.value=''" [formControl]="myForm.controls['numero2']">
   </div>
   <div *ngIf="!myForm.valid" class="alert alert-danger">Il form non è valido</div>
-  <button type="button" class="btn btn-primary m-2 btn-outline-dark text-light" (click)="somma()">+</button>
-  <button type="button" class="btn btn-primary m-2 btn-outline-dark text-light" (click)="sottrazione()">-</button>
-  <button type="button" class="btn btn-primary m-2 btn-outline-dark text-light" (click)="moltiplicazione()">*</button>
-  <button type="button" class="btn btn-primary m-2 btn-outline-dark text-light" (click)="divisione()">/</button>
+  <button type="button" class="btn btn-small btn-warning m-2 btn-outline-dark" (click)="somma()">+</button>
+  <button type="button" class="btn btn-small btn-warning m-2 btn-outline-dark" (click)="sottrazione()">-</button>
+  <button type="button" class="btn btn-small btn-warning m-2 btn-outline-dark" (click)="moltiplicazione()">*</button>
+  <button type="button" class="btn btn-small btn-warning m-2 btn-outline-dark" (click)="divisione()">/</button>
 </form>
 
-<span *ngFor="let n of arrayNumeri">{{ n }}-</span>
-
-<app-ris-component [risultato]="risultato"></app-ris-component>
+<app-ris-component [risultato]="risultato" [arrayNumeri]="arrayNumeri"></app-ris-component>
