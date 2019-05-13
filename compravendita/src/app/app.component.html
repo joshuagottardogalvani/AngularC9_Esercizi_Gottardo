@@ -1,0 +1,48 @@
+<div class="container-fluid m-0 p-0">
+  <div class="w-50 d-inline-block border border-primary">
+    <form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm.value)" class="p-5">
+      <h2>REGISTRATI</h2>
+      <div class="form-row m-2">
+          <div class="col">
+              Nome
+              <input type="text" class="form-control" onfocus="this.value=''" name="nome" [formControl]="myForm.controls['nome']">
+              <div *ngIf="myForm.controls['nome'].hasError('required')" class="text-danger mt-1">Il nome è richiesto</div>
+          </div>
+          <div class="col">
+              Cognome
+              <input type="text" class="form-control" onfocus="this.value=''" name="cognome" [formControl]="myForm.controls['cognome']">
+              <div *ngIf="myForm.controls['cognome'].hasError('required')" class="text-danger mt-1">Il cognome è richiesto</div>
+          </div>
+      </div>
+
+      <div class="m-3">
+        Username
+        <input type="text" class="form-control" onfocus="this.value=''" name="username" [formControl]="myForm.controls['username']">
+        <div *ngIf="myForm.controls['username'].hasError('required')" class="text-danger mt-1">L'username è richiesto</div>
+      </div>
+
+      <div class="m-3">
+        Password
+        <input type="password" class="form-control" onfocus="this.value=''" name="password" [formControl]="myForm.controls['password']">
+        <div *ngIf="myForm.controls['password'].hasError('required')" class="text-danger mt-1">La password è richiesto</div>
+      </div>
+
+      <div class="m-3">
+        Email
+        <input type="email" class="form-control" onfocus="this.value=''" name="email" [formControl]="myForm.controls['email']">
+        <div *ngIf="myForm.controls['email'].hasError('required')" class="text-danger mt-1">L'email è richiesta</div>
+      </div>
+
+      <div class="m-3">
+        Telefono
+        <input type="tel" class="form-control" onfocus="this.value=''" pattern="[0-9]{10}" name="telefono" [formControl]="myForm.controls['telefono']">
+        <div *ngIf="myForm.controls['telefono'].hasError('required')" class="text-danger mt-1">Il telefono è richiesto</div>
+      </div>
+
+      <div *ngIf="!myForm.valid" class="text-danger m-3"><h4>Il form non è valido</h4></div>
+      <button class="m-3 btn btn-success btn-block btn-md w-25 float-right" type="submit" [disabled]="!myForm.valid">Registrati</button>
+    </form>
+  </div>
+  <div class="w-50 d-inline-block border border-primary"></div>
+</div>
+<router-outlet></router-outlet>
