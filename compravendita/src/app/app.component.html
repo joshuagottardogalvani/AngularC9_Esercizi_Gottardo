@@ -1,7 +1,8 @@
 <div class="container-grid">
 
   <div>
-    <form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm.value)" class="p-5">
+    <div [hidden]="hide">
+      <form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm.value)" class="p-5">
       <h2>REGISTRATI</h2>
       <div class="form-row m-2">
           <div class="col">
@@ -43,10 +44,16 @@
       <div *ngIf="!myForm.valid" class="text-danger m-3"><h4>Il form non è valido</h4></div>
       <button class="m-3 btn btn-success btn-block btn-md w-25 float-right" type="submit" [disabled]="!myForm.valid">Registrati</button>
     </form>
+    </div>
+    <div [hidden]="!hide">
+        test
+    </div>
   </div>
 
   <div>
+    <button class="float-right btn btn-info" (click)="toggleVar()">Login</button>
       <ul class="p-5 list-group">
+        <h2>Utenti registrati</h2>
         <li *ngFor="let a of utenti" class="list-group-item list-group-item-danger m-1">{{ a.nome }} {{a.cognome}}</li>
       </ul>
   </div>
