@@ -1,5 +1,6 @@
-<div class="container-fluid m-0 p-0">
-  <div class="w-50 d-inline-block border border-primary">
+<div class="container-grid">
+
+  <div>
     <form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm.value)" class="p-5">
       <h2>REGISTRATI</h2>
       <div class="form-row m-2">
@@ -43,6 +44,13 @@
       <button class="m-3 btn btn-success btn-block btn-md w-25 float-right" type="submit" [disabled]="!myForm.valid">Registrati</button>
     </form>
   </div>
-  <div class="w-50 d-inline-block border border-primary"></div>
+
+  <div>
+      <ul class="p-5">
+        <li *ngFor="let a of utenti">{{ a.nome }}</li>
+      </ul>
+  </div>
+
 </div>
+
 <router-outlet></router-outlet>
