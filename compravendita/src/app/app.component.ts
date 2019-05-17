@@ -30,8 +30,6 @@ export class AppComponent {
 
       this.utenti.push(utente);
 
-      console.log('ciao');
-
     return false;
   }
 
