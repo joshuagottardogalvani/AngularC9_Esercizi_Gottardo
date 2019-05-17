@@ -45,13 +45,13 @@
       <button class="m-3 btn btn-success btn-block btn-md w-25 float-right" type="submit" [disabled]="!myForm.valid">Registrati</button>
     </form>
     </div>
-    <div [hidden]="!hide">
-        test
+    <div [hidden]="!hide" class="p-5">
+        Login
     </div>
   </div>
 
   <div>
-    <button class="float-right btn btn-info" (click)="toggleVar()">Login</button>
+      <button class="float-right btn btn-info m-2" id="btnLogin" (click)="toggleVar()">Login</button>
       <ul class="p-5 list-group">
         <h2>Utenti registrati</h2>
         <li *ngFor="let a of utenti" class="list-group-item list-group-item-danger m-1">{{ a.nome }} {{a.cognome}}</li>
