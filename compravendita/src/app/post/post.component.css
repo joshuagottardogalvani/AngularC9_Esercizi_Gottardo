@@ -24,3 +24,9 @@
 #btnCommenta {
   margin: 10px 0;
 }
+
+.aggiunta-post-oggetti {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+}

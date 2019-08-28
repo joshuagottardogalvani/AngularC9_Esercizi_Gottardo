@@ -6,11 +6,17 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PostComponent } from './post/post.component';
+import { NewObjectComponent } from './new-object/new-object.component';
+import { UserObjectsComponent } from './user-objects/user-objects.component';
+import { ObjectsListComponent } from './objects-list/objects-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PostComponent
+    PostComponent,
+    NewObjectComponent,
+    UserObjectsComponent,
+    ObjectsListComponent
   ],
   imports: [
     BrowserModule,

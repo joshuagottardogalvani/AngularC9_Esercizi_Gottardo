@@ -1,14 +1,14 @@
 import { Post } from './post';
 
 export const Posts: Post[] = [
-  { nome:'Maglietta',
-    tipo:'abbigliamento',
+  { titolo:'Vendo maglietta',
     prezzo:5,
-    descrizione:'Maglietta rossa con logo bianco',
+    descrizione:'è una maglietta brutta',
     nomeUtente:'Sara',
     cognomeUtente:'Villa',
     username:'sara.villa',
     data:'13:25, il 23/04/2019',
+    numeroPost: 1,
     commenti:[
       {
         testo:'Ha ancora l\'etichetta?',
@@ -25,14 +25,14 @@ export const Posts: Post[] = [
         data: '21:54, il 24/04/2019'
       }]
   },
-  { nome:'Bicicletta X40',
-    tipo:'veicolo',
+  { titolo:'Bicicletta',
     prezzo:125,
-    descrizione:'Bicicletta Vintage',
+    descrizione:'L\'ho vinta ad una fiera, non la voglio',
     nomeUtente:'Camilla',
     cognomeUtente:'Paglia',
     username:'cpaglia',
     data:'21:37, il 27/04/2019',
+    numeroPost: 2,
     commenti:[
       { testo:'La prendo solo se è stata usata meno di 24 giorni e 22 ore',
         cognomeUtente: 'Novembre',
@@ -41,14 +41,14 @@ export const Posts: Post[] = [
         data: '15:07, il 29/04/2019'
       }]
   },
-  { nome:'Tavolo',
-    tipo:'arredamento',
+  { titolo:'Regalo un tavolo',
     prezzo:55,
-    descrizione:'Tavolo in legno di quercia',
+    descrizione:'è un tavolo',
     nomeUtente:'Mario',
     cognomeUtente:'Novembre',
     username:'marion',
     data:'01:25, il 05/05/2019',
+    numeroPost: 3,
     commenti:[
       { testo:'Lo compro io',
         cognomeUtente: 'Paglia',

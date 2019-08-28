@@ -78,8 +78,11 @@
       </div>
   </div>
 </div>
+<hr>
 <app-post [nomeUtenteOnline]="nomeUtenteOnline" [cognomeUtenteOnline]="cognomeUtenteOnline" [username]="username"></app-post>
-<br>
+<hr>
+<app-user-objects [username]="username"></app-user-objects>
+<hr>
 <h4 *ngIf="logoutEffettuato" class="text-center m-1">LOGOUT EFFETTUATO</h4>
 <h1 class="text-danger text-center mt-5" (click)="logout()">LOGOUT</h1>
 

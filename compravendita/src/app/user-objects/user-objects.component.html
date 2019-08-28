@@ -1,0 +1,18 @@
+<h1 class="text-center mt-5">I TUOI OGGETTI</h1>
+<div class="container-oggetti">
+  <ul>
+    <li *ngFor="let oggetto of oggetti" [class.selected]="oggetto === oggettoSelezionato"
+      (click)="onSelect(oggetto)" [hidden]="oggetto.usernameProprietario != username">
+      <div class="list-group-item list-group-item-success m-1">{{oggetto.nome}}</div>
+    </li>
+  </ul>
+  <div *ngIf="oggettoSelezionato" class="list-group-item list-group-item-success rounded ml-5 mr-5">
+    <h3>{{oggettoSelezionato.nome | uppercase}}</h3>
+    <p>Tipo: {{oggettoSelezionato.tipo}}</p>
+    <p>Descrizione: {{oggettoSelezionato.descrizione}}</p>
+  </div>
+</div>
+
+<hr>
+
+<app-objects-list [oggetti]="oggetti"></app-objects-list>

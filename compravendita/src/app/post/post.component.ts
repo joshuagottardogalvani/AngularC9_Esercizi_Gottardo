@@ -14,28 +14,29 @@ export class PostComponent implements OnInit {
   @Input() nomeUtenteOnline;
   @Input() cognomeUtenteOnline;
   @Input() username;
-  oggettoForm: FormGroup;
+  postForm: FormGroup;
   posts = Posts;
+  numeroPost: number = 4;
 
   constructor(fb: FormBuilder) {
-    this.oggettoForm = fb.group({'nome': ['nome', Validators.required], 'tipo': ['tipo', Validators.required], 'prezzo': ['0', Validators.required], 'descrizione': ['descrizione', Validators.required]});
+    this.postForm = fb.group({'titolo': ['titolo', Validators.required], 'prezzo': ['0', Validators.required], 'descrizione': ['descrizione', Validators.required]});
   }
 
   ngOnInit() {
   }
 
-  aggiungiOggetto(): boolean {
+  aggiungiPost(): boolean {
 
-    if(this.oggettoForm.valid){
+    if(this.postForm.valid){
       if(this.username != null){
         let post: Post = new Post();
-        post.nome = this.oggettoForm.controls['nome'].value;
-        post.tipo = this.oggettoForm.controls['tipo'].value;
-        post.prezzo = Number(this.oggettoForm.controls['prezzo'].value);
-        post.descrizione = this.oggettoForm.controls['descrizione'].value;
+        post.titolo = this.postForm.controls['nome'].value;
+        post.prezzo = Number(this.postForm.controls['prezzo'].value);
+        post.descrizione = this.postForm.controls['descrizione'].value;
         post.nomeUtente = this.nomeUtenteOnline;
         post.cognomeUtente = this.cognomeUtenteOnline;
         post.username = this.username;
+        post.numeroPost = this.numeroPost++;
         let date: Date = new Date();
         post.data = date.getHours() + ':' + date.getMinutes() + ', il ' + date.getDay() + '/' + date.getMonth() + '/' + date.getFullYear();
         post.commenti = [];

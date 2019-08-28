@@ -1,0 +1,11 @@
+<h1 class="text-center mt-5">TUTTI GLI OGGETTI</h1>
+<ul>
+  <li *ngFor="let oggetto of oggetti">
+    <div class="list-group-item list-group-item-success w-75" style="margin: 1em auto">
+      <h3>{{oggetto.nome | uppercase }}</h3>
+      <p>Tipo: {{oggetto.tipo}}</p>
+      <p>Descrizione: {{oggetto.descrizione}}</p>
+      <p>Proprietario: {{oggetto.usernameProprietario}}</p>
+      </div>
+  </li>
+</ul>

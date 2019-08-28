@@ -1,0 +1,22 @@
+  <form [formGroup]="objectForm" (ngSubmit)="aggiungiOggetto(objectForm.value)" class="p-5">
+    <h3><b>AGGIUNGI OGGETTO</b></h3>
+    <div class="form-row m-2">
+        <div class="col">
+            Nome
+            <input type="text" class="form-control" onfocus="this.value=''" name="nome" [formControl]="objectForm.controls['nome']">
+            <div *ngIf="objectForm.controls['nome'].hasError('required')" class="text-danger mt-1">Il nome è richiesto</div>
+        </div>
+        <div class="col">
+            Tipo
+            <input type="text" class="form-control" onfocus="this.value=''" name="tipo" [formControl]="objectForm.controls['tipo']">
+            <div *ngIf="objectForm.controls['tipo'].hasError('required')" class="text-danger mt-1">Il tipo è richiesto</div>
+        </div>
+    </div>
+    <div class="m-3">
+        Descrizione
+        <input type="text" class="form-control" onfocus="this.value=''" name="descrizione" [formControl]="objectForm.controls['descrizione']">
+        <div *ngIf="objectForm.controls['descrizione'].hasError('required')" class="text-danger mt-1">La descrizione è richiesta</div>
+    </div>
+    <h4 id="loginPerOggetti" style="display:none">NON HAI EFFETTUATO IL LOGIN</h4>
+    <button class="m-3 btn btn-primary btn-block btn-md w-25 float-right" type="submit" [disabled]="!objectForm.valid">Aggiungi</button>
+  </form>
