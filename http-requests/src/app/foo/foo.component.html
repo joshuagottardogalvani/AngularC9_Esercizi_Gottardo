@@ -1,0 +1,8 @@
+<h2>Basic Request</h2>
+<button type="button" class="btn btn-dark" (click)="makeRequest()">Make Request</button>
+<h2>Make Post</h2>
+<button type="button" class="btn btn-dark" (click)="makeCompactPost()">Make Post</button>
+<div *ngIf="loading">loading...</div>
+<pre>{{data | json}}</pre>
+<br>
+
