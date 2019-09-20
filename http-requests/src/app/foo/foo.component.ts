@@ -1,16 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Foo } from '../foo.model';
 
 @Component({
   selector: 'app-foo',
   templateUrl: './foo.component.html',
   styleUrls: ['./foo.component.css']
 })
+
 export class FooComponent implements OnInit {
+
     data: Object;
     loading: boolean;
     o: Observable<Object>;
+    fooData : Foo[];
+    oFoo : Observable<Foo[]>;
 
   constructor(public http: HttpClient) {}
 
@@ -36,9 +41,6 @@ export class FooComponent implements OnInit {
     });
   }
 
-  ngOnInit() {
-  }
-
   makeCompactPost(): void {
     this.loading = true;
     this.http
@@ -49,10 +51,20 @@ export class FooComponent implements OnInit {
         userId: 1
       })
     )
+
     .subscribe(data => {
       this.data = data;
       this.loading = false;
     });
   }
+
+  makeTypedRequest() : void
+  {
+    this.oFoo = this.http.get<Foo[]>('https://jsonplaceholder.typicode.com/posts');
+    this.oFoo.subscribe(data => {this.fooData = data;});
+  }
+
+
+  ngOnInit() {}
 
 }

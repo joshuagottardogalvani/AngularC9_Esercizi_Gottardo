@@ -1,8 +1,25 @@
-<h2>Basic Request</h2>
-<button type="button" class="btn btn-dark" (click)="makeRequest()">Make Request</button>
-<h2>Make Post</h2>
-<button type="button" class="btn btn-dark" (click)="makeCompactPost()">Make Post</button>
-<div *ngIf="loading">loading...</div>
-<pre>{{data | json}}</pre>
-<br>
+  <div class="m-2">
+  <div class="d-inline-block mr-5">
+    <h2>Basic Request</h2>
+    <button type="button" class="btn btn-dark w-100" (click)="makeRequest()">Make Request</button>
+  </div>
+  <div class="d-inline-block">
+    <h2>Make Post</h2>
+    <button type="button" class="btn btn-dark w-100" (click)="makeCompactPost()">Make Post</button>
+  </div>
+  <br>
+  <br>
+  <div *ngIf="loading">loading...</div>
+  <pre>{{data | json}}</pre>
 
+  <br>
+
+  <h2>Make Typed Request</h2>
+  <button type="button" class="btn btn-dark" (click)="makeTypedRequest()">Make typed request</button>
+  <div *ngFor="let art of fooData">
+    <h3>{{art.title}}</h3>
+    <b>post {{art.id}} di utente #: {{art.userId}}</b>
+    <div> {{art.body}} </div>
+    <hr>
+  </div>
+</div>
